@@ -26,7 +26,7 @@ module.exports = function(config) {
       'bower_components/jquery/dist/jquery.min.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'js/*.js',
-      'test/*.js'
+      'test/*.spec.js'
     ],
     reporters: ['progress', 'saucelabs'],
     port: 9876,
