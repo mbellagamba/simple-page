@@ -42,7 +42,7 @@ module.exports = function(config) {
     files: [
       'bower_components/jquery/dist/jquery.min.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-      'src/*.js',
+      'js/*.js',
       'test/*.js'
     ],
 
