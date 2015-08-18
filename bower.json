@@ -1,0 +1,24 @@
+{
+  "name": "simple-page",
+  "version": "0.0.0",
+  "authors": [
+    "Mirco Bellagamba <mbellagamba@vendini.com>"
+  ],
+  "description": "simple page",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  },
+  "devDependencies": {
+    "jasmine-jquery": "~2.1.0"
+  }
+}
