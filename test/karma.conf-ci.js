@@ -1,75 +1,46 @@
 module.exports = function(config) {
 
+  if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
+    console.log('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.');
+    process.exit(1);
+  }
+
   // Browsers to run on Sauce Labs
+  // Check out https://saucelabs.com/platforms for all browser/OS combos
   var customLaunchers = {
-      sl_chrome: {
-        base: 'SauceLabs',
-        browserName: 'chrome',
-        platform: 'Windows 7',
-        version: '35'
-      },
-      sl_firefox: {
-        base: 'SauceLabs',
-        browserName: 'firefox',
-        version: '30'
-      },
-      sl_ios_safari: {
-        base: 'SauceLabs',
-        browserName: 'iphone',
-        platform: 'OS X 10.9',
-        version: '7.1'
-      },
-      sl_ie_11: {
-        base: 'SauceLabs',
-        browserName: 'internet explorer',
-        platform: 'Windows 8.1',
-        version: '11'
-      }
-    };
+    'SL_Chrome': {
+      base: 'SauceLabs',
+      browserName: 'chrome'
+    },
+    'SL_Firefox': {
+      base: 'SauceLabs',
+      browserName: 'firefox',
+      version: '26'
+    }
+  };
 
   config.set({
-
-    // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '..',
-
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
-
-
-    // list of files / patterns to load in the browser
     files: [
-      'bower_components/jquery/dist/jquery.min.js',
-      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'js/*.js',
       'test/*.js'
     ],
-
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['dots', 'saucelabs'],
-
-
-    // web server port
+    reporters: ['progress', 'saucelabs'],
     port: 9876,
-
     colors: true,
-
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
-
     sauceLabs: {
-      testName: 'Karma and Sauce Labs demo'
+      testName: 'Karma and Sauce Labs demo',
+      recordScreenshots: false,
+      connectOptions: {
+        port: 5757,
+        logfile: 'sauce_connect.log'
+      }
     },
+    // Increase timeout in case connection in CI is slow
     captureTimeout: 120000,
     customLaunchers: customLaunchers,
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: Object.keys(customLaunchers),
     singleRun: true
   });
