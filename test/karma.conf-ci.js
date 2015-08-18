@@ -23,6 +23,8 @@ module.exports = function(config) {
     basePath: '..',
     frameworks: ['jasmine'],
     files: [
+      'bower_components/jquery/dist/jquery.min.js',
+      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'js/*.js',
       'test/*.js'
     ],
