@@ -8,14 +8,28 @@ module.exports = function(config) {
   // Browsers to run on Sauce Labs
   // Check out https://saucelabs.com/platforms for all browser/OS combos
   var customLaunchers = {
-    'SL_Chrome': {
+    sl_chrome: {
       base: 'SauceLabs',
-      browserName: 'chrome'
+      browserName: 'chrome',
+      platform: 'Windows 10',
+      version: '44'
     },
-    'SL_Firefox': {
+    sl_firefox: {
       base: 'SauceLabs',
       browserName: 'firefox',
-      version: '26'
+      version: '40'
+    },
+    sl_ios_safari: {
+      base: 'SauceLabs',
+      browserName: 'iphone',
+      platform: 'OS X 10.9',
+      version: '7.1'
+    },
+    sl_ie_11: {
+      base: 'SauceLabs',
+      browserName: 'internet explorer',
+      platform: 'Windows 8.1',
+      version: '11'
     }
   };
 
