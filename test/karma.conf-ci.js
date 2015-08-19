@@ -14,17 +14,6 @@ module.exports = function(config) {
       browserName: 'chrome',
       platform: 'Windows 10'
     },
-    firefox_win10: {
-      base: 'SauceLabs',
-      browserName: 'firefox',
-      platform: 'Windows 10'
-    },
-    ie_11_win10: {
-      base: 'SauceLabs',
-      browserName: 'internet explorer',
-      platform: 'Windows 10',
-      version: '11'
-    },
     ie_11_win8_1: {
       base: 'SauceLabs',
       browserName: 'internet explorer',
@@ -37,16 +26,6 @@ module.exports = function(config) {
       browserName: 'safari',
       platform: 'OS X 10.10',
     },
-    chrome_osx: {
-      base: 'SauceLabs',
-      browserName: 'chrome',
-      platform: 'OS X 10.10',
-    },
-    firefox_osx: {
-      base: 'SauceLabs',
-      browserName: 'firefox',
-      platform: 'OS X 10.10',
-    },
     ios_safari: {
       base: 'SauceLabs',
       browserName: 'iphone',
@@ -56,10 +35,6 @@ module.exports = function(config) {
     firefox_linux: {
       base: 'SauceLabs',
       browserName: 'firefox'
-    },
-    chrome_linux: {
-      base: 'SauceLabs',
-      browserName: 'chrome'
     }
   };
 
@@ -77,12 +52,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     sauceLabs: {
-      testName: 'Karma and Sauce Labs demo',
-      recordScreenshots: false,
-      connectOptions: {
-        port: 5757,
-        logfile: 'sauce_connect.log'
-      }
+      testName: 'Karma and Sauce Labs demo'
     },
     // Increase timeout in case connection in CI is slow
     captureTimeout: 120000,
