@@ -8,27 +8,28 @@ module.exports = function(config) {
   // Browsers to run on Sauce Labs
   // Check out https://saucelabs.com/platforms for all browser/OS combos
   var customLaunchers = {
-    // Windows browsers
-    ie_11_win8_1: {
+    sl_chrome: {
+      base: 'SauceLabs',
+      browserName: 'chrome',
+      platform: 'Windows 10',
+      version: '44'
+    },
+    sl_firefox: {
+      base: 'SauceLabs',
+      browserName: 'firefox',
+      version: '40'
+    },
+    sl_ios_safari: {
+      base: 'SauceLabs',
+      browserName: 'iphone',
+      platform: 'OS X 10.9',
+      version: '7.1'
+    },
+    sl_ie_11: {
       base: 'SauceLabs',
       browserName: 'internet explorer',
       platform: 'Windows 8.1',
       version: '11'
-    },
-    // OSX browsers
-    safari_osx: {
-      base: 'SauceLabs',
-      browserName: 'safari',
-      platform: 'OS X 10.10',
-    },
-    // Linux browsers
-    firefox_linux: {
-      base: 'SauceLabs',
-      browserName: 'firefox'
-    },
-    sl_chrome_linux: {
-      base: 'SauceLabs',
-      browserName: 'chrome'
     }
   };
 
@@ -46,7 +47,11 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     sauceLabs: {
-      testName: 'Karma and Sauce Labs demo'
+      testName: 'Karma and Sauce Labs demo',
+      connectOptions: {
+        port: 5757,
+        logfile: 'sauce_connect.log'
+      }
     },
     // Increase timeout in case connection in CI is slow
     captureTimeout: 120000,
