@@ -1,7 +1,7 @@
 var toggleColor = function(selector){
   selector.click(function(){
-    $(this).toggleClass('btn');
-    $(this).toggleClass('btn-clicked');
+    $(this).toggleClass('btn-primary');
+    $(this).toggleClass('btn-danger');
   });
 };
 
