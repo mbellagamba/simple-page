@@ -37,6 +37,7 @@ module.exports = function(config) {
     basePath: '..',
     frameworks: ['jasmine'],
     files: [
+      'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
       'bower_components/jquery/dist/jquery.min.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'js/*.js',
