@@ -90,9 +90,4 @@ module.exports = function(config) {
     browsers: Object.keys(customLaunchers),
     singleRun: true
   });
-
-  if (process.env.TRAVIS) {
-    config.sauceLabs.build = 'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')';
-    config.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
-  }
 };
