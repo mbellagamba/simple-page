@@ -25,13 +25,13 @@ describe('Color test', function(){
 
   it('should change class on click', function(){
     var btn = $('.btn').click();
-    expect(btn).toHaveClass('btn-danger');
+    expect(btn.hasClass('btn-danger')).toBeTruthy();
     expect(btn.css('background-color')).toEqual('rgb(217, 83, 79)');
   });
 
   it('should have the same class when clicked two times', function(){
     var btn = $('.btn').click().click();
-    expect(btn).toHaveClass('btn-primary');
+    expect(btn.hasClass('btn-primary')).toBeTruthy();
     expect(btn.css('background-color')).toEqual('rgb(51, 122, 183)');
   });
 });
