@@ -2,11 +2,25 @@ describe('Color test', function(){
 
   var fixture = "<button class='btn btn-primary'>TEST</button>";
 
+
+  beforeAll(function() {
+    $.ajax({
+      async: false,
+      url: "/base/bower_components/bootstrap/dist/css/bootstrap.min.css",
+      dataType: 'text',
+      success: function(data) {
+        $('<style type="text/css">\n' + data + '</style>').appendTo("head");
+      }
+    });
+  });
+
   beforeEach(function(){
-    $('head').append("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">");
-    $('body').empty();
-    $('body').append(fixture);
+    $('body').empty().append(fixture);
     toggleColor($('.btn'));
+  });
+
+  afterAll(function() {
+    $('head').find('style').remove();
   });
 
   it('should change class on click', function(){

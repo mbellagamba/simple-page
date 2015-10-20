@@ -1,0 +1,47 @@
+{
+  "desiredCapabilities": [
+    {
+      "browserName": "chrome",
+      "platform": "Windows 10"
+    },
+    {
+      "browserName": "firefox",
+      "platform": "Windows 10"
+    },
+    {
+      "browserName": "internet explorer",
+      "platform": "Windows 10",
+      "version": "11"
+    },
+    {
+      "browserName": "chrome",
+      "version": "44"
+    },
+    {
+      "browserName": "firefox",
+      "version": "40"
+    },
+    {
+      "browserName": "safari",
+      "platform": "OS X 10.10"
+    },
+    {
+      "browserName": "chrome",
+      "platform": "OS X 10.10"
+    },
+    {
+      "browserName": "firefox",
+      "platform": "OS X 10.10"
+    },
+    {
+      "browserName": "internet explorer",
+      "platform": "Windows 8.1",
+      "version": "11"
+    },
+    {
+      "browserName": "internet explorer",
+      "platform": "Windows 7",
+      "version": "11"
+    }
+  ]
+}

@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
       'bower_components/jquery/dist/jquery.min.js',
+      { pattern: 'bower_components/bootstrap/dist/css/bootstrap.min.css', included: false },
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'js/*.js',
       'test/*.spec.js'
