@@ -9,20 +9,12 @@
       "platform": "Windows 10"
     },
     {
-      "browserName": "microsoftedge",
-      "platform": "Windows 10"
-    },
-    {
       "browserName": "chrome",
       "version": "44"
     },
     {
       "browserName": "firefox",
       "version": "40"
-    },
-    {
-      "browserName": "safari",
-      "platform": "OS X 10.10"
     },
     {
       "browserName": "chrome",
