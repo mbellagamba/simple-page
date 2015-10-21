@@ -18,9 +18,12 @@ if (process.env.SAUCE_USERNAME) {
   ];
 }
 
-desiredCapabilities.forEach(function (cap, index) {
+desiredCapabilities.forEach(function (cap) {
   var conf;
   if (process.env.SAUCE_USERNAME) {
+    cap.name = 'Screen shot test';
+    cap['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER;
+    cap.build = process.env.TRAVIS_BUILD_NUMBER;
     conf = {
       desiredCapabilities: cap,
       host: 'ondemand.saucelabs.com',
@@ -29,7 +32,7 @@ desiredCapabilities.forEach(function (cap, index) {
       key: process.env.SAUCE_ACCESS_KEY,
       logLevel: 'silent'
     }
-  } else {
+  } else {
     conf = {desiredCapabilities: cap};
   }
   var browser = webdriverio.remote(conf);
