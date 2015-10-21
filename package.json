@@ -31,7 +31,6 @@
     "karma-jasmine": "^0.3.6",
     "karma-sauce-launcher": "^0.2.14",
     "node-resemble-js": "0.0.4",
-    "pixelmatch": "^2.0.2",
     "png-crop": "0.0.0",
     "webdriverio": "^3.2.5"
   },

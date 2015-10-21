@@ -1,6 +1,6 @@
 var fs = require('fs');
 var shotsDir = 'shots/';
-var PNG = require('pngjs2').PNG;
+var PNG = require('pngjs').PNG;
 var PNGCrop = require('png-crop');
 var minSize = {};
 
