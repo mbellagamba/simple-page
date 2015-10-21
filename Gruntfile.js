@@ -25,23 +25,40 @@ module.exports = function (grunt) {
       },
       resize: {
         command: "node test/e2e/resize.js"
-      },
-      ci_screenshots: {
-        command: "node test/e2e/e2e-ci.js"
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 1337,
+          base: {
+            path: '.',
+            options: {
+              index: 'index.html'
+            }
+          }
+        }
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-selenium-standalone');
 
   // Default task(s).
-  grunt.registerTask('default','starts the screen shots comparisons', function(){
-    var tasks = ['selenium_standalone:server:install', 'selenium_standalone:server:start', 'shell:screenshots', 'shell:resize', 'selenium_standalone:server:stop', 'shell:jasmine'];
+  grunt.registerTask('default', 'starts the screen shots comparisons', function () {
+    var tasks = ['selenium_standalone:server:install',
+      'selenium_standalone:server:start',
+      'connect:server',
+      'shell:screenshots',
+      'shell:resize',
+      'selenium_standalone:server:stop',
+      'shell:jasmine'];
     // Use the force option for all tasks declared in the previous line
     grunt.option('force', true);
     grunt.task.run(tasks);
   });
 
-  grunt.registerTask('ci-test', ['shell:ci_screenshots', 'shell:resize', 'shell:jasmine']);
+  grunt.registerTask('ci-test', ['connect:server', 'shell:screenshots', 'shell:resize', 'shell:jasmine']);
 };

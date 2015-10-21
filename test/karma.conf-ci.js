@@ -10,56 +10,31 @@ module.exports = function(config) {
   var customLaunchers = {
     sl_chrome_win10: {
       base: 'SauceLabs',
-      browserName: 'chrome',
+      browserName: 'microsoftedge',
       platform: 'Windows 10'
-    },
-    sl_firefox_win10: {
-      base: 'SauceLabs',
-      browserName: 'firefox',
-      platform: 'Windows 10'
-    },
-    sl_ie_11_win10: {
-      base: 'SauceLabs',
-      browserName: 'internet explorer',
-      platform: 'Windows 10',
-      version: '11'
     },
     sl_chrome: {
       base: 'SauceLabs',
-      browserName: 'chrome',
-      version: '44'
+      browserName: 'chrome'
     },
     sl_firefox: {
       base: 'SauceLabs',
-      browserName: 'firefox',
-      version: '40'
+      browserName: 'firefox'
     },
     sl_osx_safari: {
       base: 'SauceLabs',
       browserName: 'safari',
-      platform: 'OS X 10.10',
+      platform: 'OS X 10.10'
     },
     sl_osx_chrome: {
       base: 'SauceLabs',
       browserName: 'chrome',
-      platform: 'OS X 10.10',
+      platform: 'OS X 10.10'
     },
     sl_osx_firefox: {
       base: 'SauceLabs',
       browserName: 'firefox',
-      platform: 'OS X 10.10',
-    },
-    sl_ie_11_win8_1: {
-      base: 'SauceLabs',
-      browserName: 'internet explorer',
-      platform: 'Windows 8.1',
-      version: '11'
-    },
-    sl_ie_11_win7: {
-      base: 'SauceLabs',
-      browserName: 'internet explorer',
-      platform: 'Windows 7',
-      version: '11'
+      platform: 'OS X 10.10'
     }
   };
 
@@ -67,7 +42,7 @@ module.exports = function(config) {
     basePath: '..',
     frameworks: ['jasmine'],
     files: [
-      'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
+      { pattern: 'bower_components/bootstrap/dist/css/bootstrap.min.css', included: false },
       'bower_components/jquery/dist/jquery.min.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'js/*.js',
