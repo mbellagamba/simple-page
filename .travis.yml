@@ -21,7 +21,6 @@ before_script:
  - npm install -g grunt-cli
 
 script:
- - karma start test/karma.conf-ci.js
  - grunt ci-test
 
 addons:
