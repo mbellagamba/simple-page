@@ -1,5 +1,5 @@
 var webdriverio = require('webdriverio');
-var PNGCrop = require('png-crop');
+var PNGCrop = require('./pngcrop');
 var fs = require('fs');
 var shotsDir = 'shots/';
 var desiredCapabilities;
