@@ -14,7 +14,7 @@ describe('Screen shots', function () {
       if (file.indexOf('.png') === file.length - 4 && file !== referenceShot) {
         return file;
       }
-    })
+    });
   });
 
   it('should be the same across browsers', function (done) {

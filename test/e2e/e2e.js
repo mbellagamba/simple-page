@@ -31,7 +31,7 @@ desiredCapabilities.forEach(function (cap) {
       user: process.env.SAUCE_USERNAME,
       key: process.env.SAUCE_ACCESS_KEY,
       logLevel: 'silent'
-    }
+    };
   } else {
     conf = {desiredCapabilities: cap};
   }
@@ -55,7 +55,7 @@ desiredCapabilities.forEach(function (cap) {
     })
     .call(function () {
 
-      var cropOptions = {width: size.width, height: size.height, top: location.top, left: location.left};
+      var cropOptions = {width: size.width, height: size.height, top: location.y, left: location.x};
       // pass a path, a buffer or a stream as the input
       PNGCrop.crop(screenshotPath, shotsDir + platform + browserName + '.png', cropOptions, function (err) {
         if (err) throw err;
